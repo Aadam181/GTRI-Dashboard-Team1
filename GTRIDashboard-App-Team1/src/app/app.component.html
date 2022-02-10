@@ -32,6 +32,7 @@
     background-color: #F0F0F0;
     color: white;
     font-weight: 600;
+
   }
 
   .toolbar-vertical {
@@ -78,9 +79,9 @@
     float: left;
     padding: 6px;
     margin-left: 15px;
-    margin-top: 5px;
-    font-size: 12px;
+    border-radius: 25px;
     border: none;
+    height: 22px;
   }
 
   .content {
@@ -319,6 +320,9 @@
   }
 </style>
 
+<!-- Need to figure out why it won't use interal calls for the icons? -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 <!-- Vertical toolbar -->
 <div class="toolbar-vertical">
   <ul>
@@ -332,7 +336,7 @@
 
 <!-- Toolbar -->
 <div class="toolbar" >
-  <input type="text" placeholder="What can I help you find today?">
+  <input type="text" class="fas" placeholder="Search... &#xF002;" />
 </div>
 
 <div class="content" role="main">
