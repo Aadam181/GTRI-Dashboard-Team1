@@ -3,15 +3,7 @@
 </svg> -->
 <html>
 <style>
-  
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+
 
   .header {
     /* position: absolute;*/
@@ -46,10 +38,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: auto;
-    width: 240px;
-    background-color: #2d2d2d;
-    font-weight: 600;
+    display: flex;
   }
 
 
@@ -103,36 +92,52 @@
 
 <!-- Vertical toolbar -->
 <div class="toolbar-vertical">
-  <nav class="sidebar card py-2 mb-4">
-    <ul class="nav flex-column" id="nav_accordion">
-      <li class="nav-item">
-        <a class="nav-link" href="#"> Link name </a>
+ <div class="flex-shrink-0 p-3 bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-light text-decoration-none border-bottom">
+      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-5 fw-semibold">Collapsible</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center collapsed text-white" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          Home
+        </button>
+        <div class="collapse" id="home-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-light">Overview</a></li>
+            <li><a href="#" class="link-light">Updates</a></li>
+            <li><a href="#" class="link-light">Reports</a></li>
+          </ul>
+        </div>
       </li>
-      <li class="nav-item has-submenu">
-        <a class="nav-link" href="#"> Submenu links  </a>
-        <ul class="submenu collapse">
-          <li><a class="nav-link" href="#">Submenu item 1 </a></li>
-          <li><a class="nav-link" href="#">Submenu item 2 </a></li>
-          <li><a class="nav-link" href="#">Submenu item 3 </a> </li>
-        </ul>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center text-white" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          Dashboard
+        </button>
+        <div class="collapse" id="dashboard-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-light">Overview</a></li>
+            <li><a href="#" class="link-light">Weekly</a></li>
+            <li><a href="#" class="link-light">Monthly</a></li>
+            <li><a href="#" class="link-light ">Annually</a></li>
+          </ul>
+        </div>
       </li>
-      <li class="nav-item has-submenu">
-        <a class="nav-link" href="#"> More menus  </a>
-        <ul class="submenu collapse">
-          <li><a class="nav-link" href="#">Submenu item 4 </a></li>
-          <li><a class="nav-link" href="#">Submenu item 5 </a></li>
-          <li><a class="nav-link" href="#">Submenu item 6 </a></li>
-          <li><a class="nav-link" href="#">Submenu item 7 </a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"> Something </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"> Other link </a>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center text-white" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
+          Orders
+        </button>
+        <div class="collapse" id="orders-collapse" style="">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">New</a></li>
+            <li><a href="#" class="link-dark rounded">Processed</a></li>
+            <li><a href="#" class="link-dark rounded">Shipped</a></li>
+            <li><a href="#" class="link-dark rounded">Returned</a></li>
+          </ul>
+        </div>
       </li>
     </ul>
-    </nav>
+  </div>
 </div>
 
 <!-- Header -->
