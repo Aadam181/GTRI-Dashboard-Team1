@@ -1,0 +1,194 @@
+<!-- <svg style="display:none;">
+ 
+</svg> -->
+<html>
+<style>
+
+
+  .header {
+    /* position: absolute;*/
+    top: 0;
+    left: 240px;
+    right: 0;
+    height: 60px;
+    display: grid;
+    align-items: center;
+    background-color: #F0F0F0;
+    color: white;
+    font-weight: 600;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: 50px;
+    margin-bottom: 30px;
+  }
+
+  .header input[type=text]{
+    width: 300px;
+    float: left;
+    padding: 6px;
+    margin-left: 240px;
+    border-radius: 25px;
+    border: none;
+    height: 22px;
+  }
+
+/* for list on left toolbar */
+  .toolbar-vertical {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+  }
+
+
+  .content {
+    position: relative;
+    left: 220px;
+    width: calc(100% - 300px);
+    min-height: 100vh;
+    padding: 30px;
+  }
+  
+  .content .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    /**/grid-column-gap: 10px;
+    /**/grid-row-gap: 30px;
+  }
+
+  .content .grid > article {
+    display: flex;
+    height: 300px;
+    background: #fff;
+    border-radius: 40px;
+    border-color: #2d2d2d;
+    box-shadow: 0 0 10px -2px rgb(0, 0, 0);
+  }
+
+
+  .footer {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+   
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+<!-- Vertical toolbar -->
+<div class="toolbar-vertical">
+ <div class="flex-shrink-0 p-3 bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-light text-decoration-none border-bottom">
+      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-5 fw-semibold">GTRI Dashboard App</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center collapsed text-white" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+          Home
+        </button>
+        <div class="collapse" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-light">Overview</a></li>
+            <li><a href="#" class="link-light">Updates</a></li>
+            <li><a href="#" class="link-light">Reports</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center text-white" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          Dashboard
+        </button>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-light">Overview</a></li>
+            <li><a href="#" class="link-light">Weekly</a></li>
+            <li><a href="#" class="link-light">Monthly</a></li>
+            <li><a href="#" class="link-light ">Annually</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center text-white" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
+          Orders
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">New</a></li>
+            <li><a href="#" class="link-dark rounded">Processed</a></li>
+            <li><a href="#" class="link-dark rounded">Shipped</a></li>
+            <li><a href="#" class="link-dark rounded">Returned</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Header -->
+<section class="header" >
+  <form>
+    <input type="text" placeholder="Search..." />
+    <button type="submit" aria-label="submit form">
+    </button>
+  </form>
+  <div class="profile">
+    <span class="greeting"></span>
+    <div class="notifications">
+      <span class="badge"></span>
+    </div>
+  </div>
+</section>
+<!-- end header--> 
+
+<div class="content" >
+<h2>Ticket Statistics</h2>
+
+  <section class="grid">
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    Team 1 Capstone 2022
+  </footer>
+
+  
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+
+</html>

@@ -10,12 +10,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
+import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 
  
 @NgModule({
   declarations: [
     AppComponent,
     TicketStatsComponent,
+    TopnavbarComponent,
+    SidenavbarComponent,
   ],
   imports: [
     BrowserModule,
