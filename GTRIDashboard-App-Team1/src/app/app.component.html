@@ -13,19 +13,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
   .header {
     /* position: absolute;*/
     top: 0;
@@ -52,41 +39,6 @@
     height: 22px;
   }
 
-  .header form {
-    position: relative;
-  }
-
-  .header form button{
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-  }
-
-  .header .profile{
-    display: flex;
-    align-items: center;
-  }
-
-  .header .profile .notifications{
-    position: relative;
-  }
-
-  .header .profile .badge{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -10px;
-    right: -3px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    font-size: 10px;
-    color: var(--white);
-    background: var(--red);
-  }
-
 /* for list on left toolbar */
   .toolbar-vertical {
     position: fixed;
@@ -96,58 +48,10 @@
     bottom: 0;
     overflow: auto;
     width: 240px;
-    display: block;
     background-color: #2d2d2d;
-    align-items: center;
     font-weight: 600;
   }
 
-  .toolbar-vertical img {
-    margin: 0 0 600px 85px;
-  }
-
-  
-  .toolbar-vertical ul {
-    list-style-type: none;
-    position: absolute;
-    top: 140px;
-    right: auto;
-  }
-
-  .toolbar-vertical li{
-    padding-top: 6px;
-  }
-
-  .toolbar-vertical .menu{
-   display: flex;
-   flex-direction: column;
-   flex-grow: 1;
-   margin-top: 35px;
-  }
-
-  .toolbar-vertical .menu li:last-child{
-    margin-top: auto;
-    margin-bottom: 20px;
-  }
-
-  .toolbar-vertical .menu li> *{
-    width: 100%;
-    padding: 12px 15px;
-  }
-  
-  .toolbar-vertical .menu .menu-heading h3{
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 12px;
-    color: #125699;
-  }
-
-  .toolbar-vertical .menu a,
-  .toolbar-vertical .menu button{
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-  }
 
   .content {
     position: relative;
@@ -174,23 +78,6 @@
     box-shadow: 0 0 10px -2px rgb(0, 0, 0);
   }
 
- /* .content .grid > article:last-child{
-    grid-column: 1 / -1;
-  }*/
-
-  svg{
-    display: block;
-  }
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
 
   .footer {
     font-size: 1rem;
@@ -216,15 +103,36 @@
 
 <!-- Vertical toolbar -->
 <div class="toolbar-vertical">
-  <ul class="menu">
-    <li class="menu-heading"> 
-      <h3>Dashboard</h3>
-    </li>
-    <li><a href="#"> Inventory</a></li>
-    <li><a href="#"> Distribution</a></li>
-    <li><a href="#"> Service Desk</a></li>
-    <li><a href="#"> Settings</a></li>
-  </ul>
+  <nav class="sidebar card py-2 mb-4">
+    <ul class="nav flex-column" id="nav_accordion">
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Link name </a>
+      </li>
+      <li class="nav-item has-submenu">
+        <a class="nav-link" href="#"> Submenu links  </a>
+        <ul class="submenu collapse">
+          <li><a class="nav-link" href="#">Submenu item 1 </a></li>
+          <li><a class="nav-link" href="#">Submenu item 2 </a></li>
+          <li><a class="nav-link" href="#">Submenu item 3 </a> </li>
+        </ul>
+      </li>
+      <li class="nav-item has-submenu">
+        <a class="nav-link" href="#"> More menus  </a>
+        <ul class="submenu collapse">
+          <li><a class="nav-link" href="#">Submenu item 4 </a></li>
+          <li><a class="nav-link" href="#">Submenu item 5 </a></li>
+          <li><a class="nav-link" href="#">Submenu item 6 </a></li>
+          <li><a class="nav-link" href="#">Submenu item 7 </a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Something </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Other link </a>
+      </li>
+    </ul>
+    </nav>
 </div>
 
 <!-- Header -->
@@ -264,7 +172,7 @@
     <article></article>
     <article></article>
   </section>
- 
+
   <!-- Footer -->
   <footer class="footer">
     Team 1 Capstone 2022

@@ -9,11 +9,13 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
  
 @NgModule({
   declarations: [
     AppComponent,
-    TicketStatsComponent
+    TicketStatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,6 @@ import 'bootstrap';
     MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
