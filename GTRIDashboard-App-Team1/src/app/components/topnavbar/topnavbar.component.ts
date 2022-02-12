@@ -10,17 +10,28 @@ export class TopnavbarComponent implements OnInit {
 
   navItems = [
     {
-      path: '/user-profile',
-      name: 'User Profile'
-    },
-    {
       path: '/system-notifications',
-      name: 'System Notifications'
+      name: 'ICON SN',
+     
     },
     {
       path: '/user-notifications',
-      name: 'User Notifications'
+      name: 'ICON UN'
     },
+    {
+      path: '',
+      name: 'Hello, Admin >',
+      subItems: [
+        {
+          path: '/user-profile',
+          name: 'My Profile',
+        },
+        {
+          path: '/user-settings',
+          name: 'Settings',
+        }
+      ]
+    }
   ]
 
   constructor() { }

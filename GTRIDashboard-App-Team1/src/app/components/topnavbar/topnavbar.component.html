@@ -10,7 +10,12 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item" *ngFor="let item of navItems">
             <a class="nav-link active" [routerLink]="item.path" routerLinkActive="active">{{item.name}}</a>
-          </li>
+            <ul *ngIf="item.subItems">
+                <li *ngFor="let subItem of item.subItems">
+                    <a [routerLink]="subItem.path">{{subItem.name}}</a>
+                </li>
+            </ul>
+        </li>
         </ul>
       </div>
     </div>

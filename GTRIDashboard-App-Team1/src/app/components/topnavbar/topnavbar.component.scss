@@ -1,3 +1,37 @@
 nav {
-    background-color: #2d2d2d;
+    background-color: #f4f4f4;
+    ul {
+        li{
+            padding: 10px;
+            text-transform:  uppercase;
+            position: relative;
+            a{
+                color: #2d2d2d;
+                letter-spacing: 2px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            &:hover {
+                ul {
+                    display:block;
+                }
+            }
+            ul {
+                list-style-type: none;
+                position: absolute;
+                background-color: black;
+                padding: 10px;
+                display: none;
+                width: 150px;
+                li {
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        display: block;
+
+                    }
+                }
+            }
+        }
+    }
 }
