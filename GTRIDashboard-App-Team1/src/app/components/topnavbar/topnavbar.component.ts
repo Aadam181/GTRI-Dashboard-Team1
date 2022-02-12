@@ -8,6 +8,21 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class TopnavbarComponent implements OnInit {
 
+  navItems = [
+    {
+      path: '/user-profile',
+      name: 'User Profile'
+    },
+    {
+      path: '/system-notifications',
+      name: 'System Notifications'
+    },
+    {
+      path: '/user-notifications',
+      name: 'User Notifications'
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
