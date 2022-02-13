@@ -1,10 +1,14 @@
 <p>sidenavbar works!</p>
-<mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button> 
-      <mat-icon aria-label="Side nav toggle icon">Menu</mat-icon>
-      </button>
-      <span>dashboard</span>
-      </mat-toolbar>
-      </mat-sidenav-content>
-  
+<mat-nav-list>  
+    <div class="logo py-4">
+        <img src="GTRIDashboard-App-Team1/src/app/assets/images/KSULogo.png" alt="Company Logo">
+    </div>
+    <a class="text-white" mat-list-item routerLink="/home" routerLinkActive="list-item-active">
+        <mat-icon>home</mat-icon> 
+        Home
+    </a>
+    <a class="text-white" mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
+        <mat-icon>dashboard</mat-icon> 
+        Dashboard
+    </a>
+</mat-nav-list>
