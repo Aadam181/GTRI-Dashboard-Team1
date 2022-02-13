@@ -7,17 +7,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
-
+import { MaterialModule } from './material.module';
+import { ComponentNotFoundComponent } from './components/component-not-found/component-not-found.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     TopnavbarComponent,
     SidenavbarComponent,
+    ComponentNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +26,7 @@ import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.componen
     MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
