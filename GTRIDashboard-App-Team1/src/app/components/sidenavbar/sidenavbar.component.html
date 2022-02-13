@@ -1,30 +1,19 @@
-<p>sidenavbar works!</p>
 <mat-nav-list>  
-    <div class="logo py-4">
-        <img src="GTRIDashboard-App-Team1/src/app/assets/images/KSULogo.png" alt="Company Logo">
-    </div>
-    <a class="text-white" mat-list-item routerLink="/home" routerLinkActive="list-item-active">
-        <mat-icon>home</mat-icon> 
-        Home
-    </a>
-    <a class="text-white" mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
-        <mat-icon>dashboard</mat-icon> 
-        Dashboard
-    </a>
-</mat-nav-list>
-
-<div class="wrapper">
   <!-- Sidebar -->
-  <nav id="sidebar">
     <div class="sidebar-header">
-     
+        <div class="logo py-4 text-white">
+            <img src="../../assets/images/KSULogo.png" alt="Company Logo">
+        </div>
     </div>
 
     <ul class="list-unstyled components">
       <p>Dashboard Tools</p>
 
       <li class="active">
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+        <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white" mat-list-item routerLink="/home" routerLinkActive="list-item-active">
+            <mat-icon>home</mat-icon> 
+            Home
+        </a>
         <ul class="collapse list-unstyled" id="homeSubmenu">
           <li><a href="#">Home 1</a></li>
           <li><a href="#">Home 2</a></li>
@@ -32,7 +21,10 @@
         </ul>
       </li>
 
-      <li><a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+      <li><a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white" mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
+          <mat-icon>dashboard</mat-icon> 
+          Dashboard
+        </a>
         <ul class="collapse list-unstyled" id="pageSubmenu">
           <li><a href="#">Page 1</a></li>
           <li><a href="#">Page 2</a></li>
@@ -47,4 +39,4 @@
       
     </ul>
 
-  </nav>
+</mat-nav-list>
