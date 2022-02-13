@@ -85,12 +85,12 @@ a, a:hover, a:focus {
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #000;
-    background: #f4f4f4;
+    background: #d2d2d2;
 }
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #f4f4f4;
+    background: #d2d2d2;
 }
 .logo {
     text-align: center;
@@ -102,4 +102,10 @@ ul ul a {
 .mat-icon {
     vertical-align: center;
     margin-right: 1rem;
+}
+.mat-list-item {
+    color: #d2d2d2 !important;
+    font-size: 0.8rem;
+    height: 35px !important;
+    margin-bottom: 4px;
 }
