@@ -10,14 +10,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { MaterialModule } from './material.module';
-import { ComponentNotFoundComponent } from './components/component-not-found/component-not-found.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     TopnavbarComponent,
     SidenavbarComponent,
-    ComponentNotFoundComponent,
   ],
   imports: [
     BrowserModule,
