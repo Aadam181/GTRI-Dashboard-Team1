@@ -2,15 +2,13 @@
   <!-- Sidebar -->
     <div class="sidebar-header">
         <div class="logo py-4 text-white">
-            <img src="../../assets/images/KSULogo.png" alt="Company Logo">
+            <img src="/../assets/images/KSULogo.png" alt="Company Logo">
         </div>
     </div>
 
     <ul class="list-unstyled components">
-      <p>Dashboard Tools</p>
-
       <li class="active">
-        <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white" mat-list-item routerLink="/home" routerLinkActive="list-item-active">
+        <a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" mat-list-item routerLink="/home" routerLinkActive="list-item-active">
             <mat-icon>home</mat-icon> 
             Home
         </a>
@@ -21,7 +19,7 @@
         </ul>
       </li>
 
-      <li><a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white" mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
+      <li><a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active">
           <mat-icon>dashboard</mat-icon> 
           Dashboard
         </a>
@@ -32,10 +30,10 @@
         </ul>
       </li>
 
-      <li><a href="#">Network</a></li>
+      <li><a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active"><mat-icon>dns</mat-icon> Network</a></li>
 
-      <li><a href="#">Tickets</a></li>
-      <li><a href="#">Lorem</a></li>
+      <li><a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active"><mat-icon>people</mat-icon>Service Desk</a></li>
+      <li><a mat-list-item routerLink="/dashboard" routerLinkActive="list-item-active"><mat-icon>settings</mat-icon> Settings</a></li>
       
     </ul>
 
