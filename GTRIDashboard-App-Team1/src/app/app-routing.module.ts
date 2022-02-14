@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AssetStatisticsComponent } from './components/asset-statistics/asset-statistics.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HomeComponent } from './components/home/home.component';
+import { TicketStatisticsComponent } from './components/ticket-statistics/ticket-statistics.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch:'full'},
-  {path: 'home', component:HomeComponent},
-  {path: 'dashboard', component:DashboardComponent}
+  {path: '', redirectTo: 'dashboard', pathMatch:'full'},
+  {path: 'dashboard', component:DashboardComponent},
+  {path: 'asset-statistics', component:AssetStatisticsComponent},
+  {path: 'ticket-statistics', component:TicketStatisticsComponent}
 ];
 
 @NgModule({
