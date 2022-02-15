@@ -16,8 +16,9 @@ import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { MaterialModule } from './material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { TicketStatisticsComponent } from './components/ticket-statistics/ticket-statistics.component';
+import { AssetStatisticsComponent } from './components/asset-statistics/asset-statistics.component';
  
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { LoginComponent } from './components/login/login.component';
     TopnavbarComponent,
     SidenavbarComponent,
     DashboardComponent,
-    HomeComponent,
     LoginComponent,
+    TicketStatisticsComponent,
+    AssetStatisticsComponent,
   ],
   imports: [
     BrowserModule,

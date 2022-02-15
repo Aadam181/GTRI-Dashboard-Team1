@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-topnavbar',
@@ -7,10 +7,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopnavbarComponent implements OnInit {
-
+  @Output() toggleSidebarForMe: EventEmitter<any>=new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleSidebar() {
+    this.toggleSidebarForMe.emit();
   }
 
 }
