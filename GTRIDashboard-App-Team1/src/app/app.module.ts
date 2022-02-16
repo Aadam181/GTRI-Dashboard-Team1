@@ -19,6 +19,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { TicketStatisticsComponent } from './components/ticket-statistics/ticket-statistics.component';
 import { AssetStatisticsComponent } from './components/asset-statistics/asset-statistics.component';
+import { LoginComponent } from './components/login/login.component';
  
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AssetStatisticsComponent } from './components/asset-statistics/asset-st
     LoginComponent,
     TicketStatisticsComponent,
     AssetStatisticsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
