@@ -16,6 +16,7 @@ import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { MaterialModule } from './material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
 import { TicketStatisticsComponent } from './components/ticket-statistics/ticket-statistics.component';
 import { AssetStatisticsComponent } from './components/asset-statistics/asset-statistics.component';
 import { LoginComponent } from './components/login/login.component';
@@ -26,6 +27,7 @@ import { LoginComponent } from './components/login/login.component';
     TopnavbarComponent,
     SidenavbarComponent,
     DashboardComponent,
+    LoginComponent,
     TicketStatisticsComponent,
     AssetStatisticsComponent,
     LoginComponent,
