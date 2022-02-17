@@ -1,7 +1,8 @@
-if (process.env.NODE_ENV !== 'production'){
+if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
+const Users = require('./models/users')
 
 const express = require('express')
 const app = express()
@@ -13,12 +14,18 @@ const methodOverride = require('method-override')
 
 const initializePassport = require('./passport-config')
 initializePassport(
-    passport, 
-    email => users.find(user => user.email === email),
-    id => users.find(user => user.id === id)
+    passport,
+    email => Users.find(User => Users.email === email),
+    id => Users.find(User => Users.id === id)
 )
 
-const users = [] /* Link database here, current user info store locally */
+//database connected here
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb+srv://capstone:capstone@cluster0.nx9oh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { dbName: 'Capstone' })
+    .then(() => { console.log("connected"); })
+    .catch(() => { console.log("error connecting"); });
+
 
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
@@ -33,7 +40,7 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 app.get('/', checkAuthenticated, (req, res) => {
-    res.render('index.ejs', {name: req.user.name })
+    res.render('index.ejs', { name: req.user.name })
 })
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
@@ -50,39 +57,40 @@ app.get('/register', checkNotAuthenticated, (req, res) => {
     res.render('register.ejs')
 })
 
-app.post('/register', checkNotAuthenticated, async (req, res) =>{
-    try{
-        const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        users.push({
-            id: Date.now().toString(),
-            name: req.body.name,
-            email: req.body.email,
-            password: hashedPassword
-        })
-        res.redirect('/login')
-    } catch{
-        res.redirect('/register')
-    }
-    console.log(users)
-})
+//Registering users here
+app.post('/register', checkNotAuthenticated, async (req, res, next) => {
 
+    const users = new Users({
+        name: req.body.name,
+        email: req.body.email,
+        password: await bcrypt.hash(req.body.password, 10)
+    });
+    users.save()
+        .then(() => { console.log('Success'); })
+        .catch(err => { console.log('error: ' + err); })
+    res.redirect('/login')
+});
+
+//logout here
 app.delete('/logout', (req, res) => {
     req.logOut()
     res.redirect('/login')
 })
 
-function checkAuthenticated(req, res, next){
-    if (req.isAuthenticated()){
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
         return next()
     }
     res.redirect('/login')
 }
 
 function checkNotAuthenticated(req, res, next) {
-    if (req.isAuthenticated()){
-       return res.redirect('/')
+    if (req.isAuthenticated()) {
+        return res.redirect('/')
     }
     next()
 }
+
+
 
 app.listen(3000)
