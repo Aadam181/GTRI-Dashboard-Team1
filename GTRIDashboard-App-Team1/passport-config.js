@@ -1,30 +1,39 @@
 const { ModuleResolutionKind } = require('typescript')
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
+const Users = require('./models/users')//
 
-function initialize(passport, getUserByEmail, getUserById){
-    const authenticateUser = async (email, password, done) => {
-        const user = getUserByEmail(email)
-        if (user == null){
-            return done(null, false, { message: 'No user with that email' })
-        }
+module.exports = function (passport) {
+    passport.use(
+        new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+            //match user
+            Users.findOne({ email: email })
+                .then((Users) => {
+                    if (!Users) {
+                        return done(null, false, { message: 'that email is not registered' });
+                    }
+                    //match pass
+                    bcrypt.compare(password, Users.password, (err, isMatch) => {
+                        if (err) throw err;
 
-        try{
-            if(await bcrypt.compare(password, user.password)){
-                return done(null, user)
-            } else {
-                return done(null, false, {message: 'Password incorrect'})
-            }
-        } catch (e) {
-            return done(e)
-        }
-    }
+                        if (isMatch) {
+                            return done(null, Users);
+                        } else {
+                            return done(null, false, { message: 'pass incorrect' });
+                        }
+                    })
+                })
+                .catch((err) => { console.log(err) })
+        })
 
-    passport.use(new LocalStrategy({ usernameField: 'email' }, authenticateUser))
-    passport.serializeUser((user, done) => done(null,user.id))
-    passport.deserializeUser((id, done) => { 
-        return done(null, getUserById(id))
-    })
-}
+    )
+    passport.serializeUser(function (Users, done) {
+        done(null, Users.id);
+    });
 
-module.exports = initialize
+    passport.deserializeUser(function (id, done) {
+        Users.findById(id, function (err, Users) {
+            done(err, Users);
+        });
+    });
+};

@@ -32,8 +32,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
+    resave: true,
+    saveUninitialized: true
 }))
 app.use(passport.initialize())
 app.use(passport.session())
@@ -90,7 +90,5 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
 }
-
-
 
 app.listen(3000)
