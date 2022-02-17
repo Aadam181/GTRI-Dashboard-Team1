@@ -1,0 +1,31 @@
+<mat-toolbar>
+    <mat-toolbar-row class="justify-content-between mt-2">
+        <button mat-icon-button (click)="toggleSidebar()"><mat-icon>menu</mat-icon></button>
+        <div class="row mr-2 ml-auto">
+            <ul>
+                <li>
+                        <button mat-button [mat-menu-trigger-for]="menu" class="user mt-2 d-flex align-items-center">
+                            User Name
+                            <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+                            <img src="../../../../assets/images/userimages/user.jpg" alt="" class="user-image">
+
+                        </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <a routerLink="/userprofile"><mat-icon>person</mat-icon>My Profile</a>
+                         </button>
+                        <button mat-menu-item>
+                            
+                            <a routerLink="/changepassword"><mat-icon>lock</mat-icon>Change Password</a>
+                        </button>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item>
+                            
+                            <a routerLink="/logout"><mat-icon>exit_to_app</mat-icon>Logout</a>
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

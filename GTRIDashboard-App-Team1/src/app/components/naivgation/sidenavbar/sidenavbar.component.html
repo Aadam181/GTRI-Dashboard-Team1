@@ -28,7 +28,7 @@
 -->
 <div class="sidebar-header">
   <div class="logo py-4 text-white">
-      <img src="../../../assets/images/KSULogo.png" alt="Company Logo">
+      <img src="../../../assets/images/logo/KSULogo.png" alt="Company Logo">
   </div>
 </div>
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
@@ -41,7 +41,7 @@
   <!-- This is the tree node template for expandable nodes -->
   <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
       <div class="mat-tree-node">
-        <mat-icon>{{node.icon}}</mat-icon> <a style="font-weight: 500;" routerLinkActive="list-item-active" [routerLink]="[node?.path]">{{node.name}}</a>
+        <mat-icon>{{node.icon}}</mat-icon><a style="font-weight: 500;" routerLinkActive="list-item-active" [routerLink]="[node?.path]">{{node.name}}</a>
         <button mat-icon-button matTreeNodeToggle
                 [attr.aria-label]="'Toggle ' + node.name">
           <mat-icon class="mat-icon-rtl-mirror">

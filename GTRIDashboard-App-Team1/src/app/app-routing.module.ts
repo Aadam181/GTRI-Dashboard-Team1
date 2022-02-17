@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AssetStatisticsComponent } from './components/asset-statistics/asset-statistics.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoginComponent } from './components/login/login.component';
-import { TicketStatisticsComponent } from './components/ticket-statistics/ticket-statistics.component';
+import { AssetStatisticsComponent } from './components/statistics-dashobard/asset-statistics/asset-statistics.component';
+import { DashboardComponent } from './components/statistics-dashobard/dashboard/dashboard.component';
+import { LoginComponent } from './components/authentication/login/login.component';
+import { TicketStatisticsComponent } from './components/statistics-dashobard/ticket-statistics/ticket-statistics.component';
 
 
 const routes: Routes = [

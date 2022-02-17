@@ -12,13 +12,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { TopnavbarComponent } from './components/topnavbar/topnavbar.component';
-import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
+import { TopnavbarComponent } from './components/naivgation/topnavbar/topnavbar.component';
+import { SidenavbarComponent } from './components/naivgation/sidenavbar/sidenavbar.component';
 import { MaterialModule } from './material.module';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { TicketStatisticsComponent } from './components/ticket-statistics/ticket-statistics.component';
-import { AssetStatisticsComponent } from './components/asset-statistics/asset-statistics.component';
-import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/statistics-dashobard/dashboard/dashboard.component';
+import { TicketStatisticsComponent } from './components/statistics-dashobard/ticket-statistics/ticket-statistics.component';
+import { AssetStatisticsComponent } from './components/statistics-dashobard/asset-statistics/asset-statistics.component';
+import { LoginComponent } from './components/authentication/login/login.component';
  
 @NgModule({
   declarations: [

@@ -48,7 +48,7 @@ const TREE_DATA: NavigationNode[] = [
     {icon: "", name: 'Windows Feature Updates', path: ""}],
   },
   {
-    icon: "headset_mic", name: 'Service desk', path: "",
+    icon: "headset_mic", name: 'Service Desk', path: "",
     children: [
     {icon: "", name: 'Tickets', path: ""},
     {icon: "", name: 'Knowledge Base', path: ""},
