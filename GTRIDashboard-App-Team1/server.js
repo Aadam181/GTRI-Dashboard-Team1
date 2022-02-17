@@ -63,7 +63,7 @@ app.post('/register', checkNotAuthenticated, async (req, res, next) => {
     const users = new Users({
         name: req.body.name,
         email: req.body.email,
-        password: await bcrypt.hash(req.body.password, 10)
+        password: req.body.password
     });
     users.save()
         .then(() => { console.log('Success'); })
