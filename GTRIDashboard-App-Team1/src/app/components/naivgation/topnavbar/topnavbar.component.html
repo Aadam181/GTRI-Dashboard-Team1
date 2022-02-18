@@ -1,15 +1,32 @@
 <mat-toolbar>
     <mat-toolbar-row class="justify-content-between mt-2">
         <button mat-icon-button (click)="toggleSidebar()"><mat-icon>menu</mat-icon></button>
+        <form action="" class="">
+            <div class="input-group">
+                <input type="text" class="form-control form-control-lg" placeholder="Search Here">
+                <button type="submit" class="input-group-text btn-primary"><i class="bi bi-search me-2"></i> Search</button>
+            </div>
+        </form>
         <div class="row mr-2 ml-auto">
             <ul>
                 <li>
-                        <button mat-button [mat-menu-trigger-for]="menu" class="user mt-2 d-flex align-items-center">
-                            User Name
-                            <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
-                            <img src="../../../../assets/images/userimages/user.jpg" alt="" class="user-image">
-
-                        </button>
+                    <button mat-button [mat-menu-trigger-for]="notificationMenu" class="user mt-2 d-flex align-items-center">
+                        <mat-icon class="user-image-icon ml-1">notifications</mat-icon>
+                    </button>
+                        <mat-menu #notificationMenu="matMenu">
+                            <mat-card class="notification-content" >
+                                <mat-card-content>
+                                        Content Goes Here...
+                                </mat-card-content>
+                            </mat-card>
+                        </mat-menu>
+                    </li>
+                <li>
+                <button mat-button [mat-menu-trigger-for]="menu" class="user mt-2 d-flex align-items-center">
+                    User Name
+                    <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+                    <img src="../../../../assets/images/userimages/user.jpg" alt="" class="user-image">
+                </button>
                     <mat-menu #menu="matMenu">
                         <button mat-menu-item>
                             <a routerLink="/userprofile"><mat-icon>person</mat-icon>My Profile</a>
