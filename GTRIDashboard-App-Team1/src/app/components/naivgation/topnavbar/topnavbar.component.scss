@@ -1,3 +1,7 @@
+*:not(mat-icon) {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
 .mat-toolbar {
     top: 0;
     z-index: 100;
@@ -16,13 +20,30 @@ ul {
     height: 300px;
 }
 
-button {
-    border: 0;
-    outline: none;
-    background: transparent;
+.dashboard-search {
+    .input-dbSearch, .btn-dbSearch {
+    border-radius: 50px;
+    background-color: #f8f8f8;
+    border:1px solid #e4e4e4;
+    } 
+    .input-dbSearch {
+        width: 400px;
+        font-size: 0.75em;
+     border-right: none;
+    }
+    .input-dbSearch:focus {
+        border:1px solid #e4e4e4;
+        border-right: none;
+
+    }
+    .btn-dbSearch {
+        border-left: none;
+    }
 }
 
 .user {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
     font-size: 16px;
 }
 
@@ -42,6 +63,7 @@ button {
 ::ng-deep {
     .mat-menu-content {
         width: 200px;
+        
     }
 }
 a {

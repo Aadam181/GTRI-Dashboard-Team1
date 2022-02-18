@@ -12,3 +12,14 @@ mat-drawer {
 mat-drawer-container {
     height: 100%;
 }
+*:not(mat-icon) {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+html {
+    background-color: red;
+    vertical-align: auto;
+}
+.login-wrapper {
+    background: green;
+}
