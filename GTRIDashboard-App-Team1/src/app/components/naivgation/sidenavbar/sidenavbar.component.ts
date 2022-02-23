@@ -76,6 +76,7 @@ const TREE_DATA: NavigationNode[] = [
     {icon: "", name: 'Support', path:""}],
   },
 ];
+
 @Component({
   selector: 'app-sidenavbar',
   templateUrl: './sidenavbar.component.html',
