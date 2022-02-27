@@ -16,7 +16,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { TopnavbarComponent } from './components/naivgation/topnavbar/topnavbar.component';
 import { SidenavbarComponent } from './components/naivgation/sidenavbar/sidenavbar.component';
 import { MaterialModule } from './material.module';
-import { DashboardComponent } from './components/statistics-dashobard/dashboard/dashboard.component';
 import { TicketStatisticsComponent } from './components/statistics-dashobard/ticket-statistics/ticket-statistics.component';
 import { AssetStatisticsComponent } from './components/statistics-dashobard/asset-statistics/asset-statistics.component';
 import { LoginComponent } from './components/authentication/login/login.component';
@@ -30,7 +29,6 @@ import { RegisterService } from './register.service';
     AppComponent,
     TopnavbarComponent,
     SidenavbarComponent,
-    DashboardComponent,
     LoginComponent,
     TicketStatisticsComponent,
     AssetStatisticsComponent,
