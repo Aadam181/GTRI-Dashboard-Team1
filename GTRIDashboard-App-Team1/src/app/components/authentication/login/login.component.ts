@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.email + this.password);
     this._myService.addUsers(this.email ,this.password);
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/ticket-statistics']);
 
   }
 

@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('', checkAuthenticated, (req, res) => {
-    res.send('/dashboard', { name: req.user.name })
+    res.send('/ticket-statistics', { name: req.user.name })
 })
 
 app.get('', checkNotAuthenticated, (req, res) => {
