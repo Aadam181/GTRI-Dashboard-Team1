@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,11 @@ import { DashboardComponent } from './components/statistics-dashobard/dashboard/
 import { TicketStatisticsComponent } from './components/statistics-dashobard/ticket-statistics/ticket-statistics.component';
 import { AssetStatisticsComponent } from './components/statistics-dashobard/asset-statistics/asset-statistics.component';
 import { LoginComponent } from './components/authentication/login/login.component';
- 
+import { RegisterComponent } from './components/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './login.service';
+import { RegisterService } from './register.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,9 +35,12 @@ import { LoginComponent } from './components/authentication/login/login.componen
     TicketStatisticsComponent,
     AssetStatisticsComponent,
     LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
@@ -43,9 +51,10 @@ import { LoginComponent } from './components/authentication/login/login.componen
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

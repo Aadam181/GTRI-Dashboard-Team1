@@ -1,7 +1,7 @@
 const { ModuleResolutionKind } = require('typescript')
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcrypt')
-const Users = require('./models/users')//
+const Users = require('./serverside/models/users')//
 
 module.exports = function (passport) {
     passport.use(
