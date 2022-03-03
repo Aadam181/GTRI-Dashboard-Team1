@@ -17,14 +17,14 @@ export class RegisterService {
 
 
     //Uses http.post() to post data 
-    addUsers(name: string, email: string, password: string) {
-        this.http.post('http://localhost:3000/register', { name, email, password })
+    addUsers(name: string, email: string, password: string, cpassword: string) {
+        this.http.post('http://localhost:3000/register', { name, email, password, cpassword })
             .subscribe((responseData) => {
                 console.log(responseData);
             });
     }
 
-
+    
 
 
 }

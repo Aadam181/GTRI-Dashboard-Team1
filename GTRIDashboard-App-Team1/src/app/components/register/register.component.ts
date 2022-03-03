@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
   });
 
   onSubmit() {
-    this._myService.addUsers(this.name, this.email ,this.password);
+    this._myService.addUsers(this.name, this.email ,this.password, this.cpassword);
     this.router.navigate(['/login']);
   }
 }

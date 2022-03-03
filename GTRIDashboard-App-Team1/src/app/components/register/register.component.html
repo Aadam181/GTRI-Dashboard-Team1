@@ -80,8 +80,8 @@
         </p>
 
         <div class="clearfix">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <button type="submit" class="signupbtn">Sign Up</button>
+         <a [routerLink]="['/login']"><button type="button" class="cancelbtn">Cancel</button></a>
+          <button type="submit" [disabled]="!myForm.form.valid" class="signupbtn">Sign Up</button>
         </div>
       </div>
     </form>
