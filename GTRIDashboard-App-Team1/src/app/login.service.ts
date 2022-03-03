@@ -12,13 +12,13 @@ export class LoginService {
 
     // Uses http.get() to load data 
     getUsers() {
-        return this.http.get('http://localhost:8000/login');
+        return this.http.get('http://localhost:3000/login');
     }
 
 
     //Uses http.post() to post data 
     addUsers(email: string, password: string) {
-        this.http.post('http://localhost:8000/login', { email, password })
+        this.http.post('http://localhost:3000/login', { email, password })
             .subscribe((responseData) => {
                 console.log(responseData);
             });

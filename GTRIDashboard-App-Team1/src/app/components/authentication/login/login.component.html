@@ -1,30 +1,32 @@
-<div class="row pt-5">
-    <div class="col-md-6 mx-auto">
-        <div class="card rounded-0">
-            <div class="card-header">
-                <h3 class="mb-0">Login</h3>
-            </div>
-            <div class="card-body">
-                <form class="form" (ngSubmit)="onSubmit()" #myForm="ngForm">
-                    <div class="form-group">
+<!DOCTYPE html>
+<html>
 
-                        <mat-form-field>
-                            <label for="">Email: </label>
-                            <input [(ngModel)]="email" name="email" type="text" class="frm-control rounded-0" required>
-                        </mat-form-field>
-                    </div>
-                    <div class="form-group pt-2">
-                        <mat-form-field>
-                            <label for="">Password: </label>
-                            <input [(ngModel)]="password" name="password" type="password" class="frm-control rounded-0"
-                                required>
-                        </mat-form-field>
-                    </div>
-                    <button type="submit" class="btn btn-success float-right">Login</button>
-                   
-                   <a routerLink="/register"><button type="button" class="btn btn-primary float-right">Register</button></a> 
-                </form>
-            </div>
+<body>
+
+    <form class="form" (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <div class="imgcontainer">
+            <img src="../../../../assets/images/userimages/user.jpg" alt="Avatar" class="avatar" />
         </div>
+
+        <div class="container">
+            <label for="email"><b>Email</b></label>
+            <input [(ngModel)]="email" type="text" placeholder="Enter Email" name="email" required />
+
+            <label for="password"><b>Password</b></label>
+            <input [(ngModel)]="password" type="password" placeholder="Enter Password" name="password" required />
+
+            <button type="submit">Login</button>
+
+        </div>
+
+        <div class="container" style="background-color: #f1f1f1">
+
+        </div>
+    </form>
+
+    <div class="container" style="background-color: #f1f1f1">
+        <span> Don't have an account? <a href="/register">Register</a></span>
     </div>
-</div>
+</body>
+
+</html>
