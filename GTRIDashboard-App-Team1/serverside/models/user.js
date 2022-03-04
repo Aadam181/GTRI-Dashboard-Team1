@@ -1,16 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
-//define a schema
-const usersSchema = new mongoose.Schema({
-    name: { type: String },
-    email: { type: String },
-    password: { type: String },
-    cpassword: { type: String}
+const Schema = mongoose.Schema
+const userSchema = new Schema({
+    name: String,
+    email: String,
+    password: String,
+    cpassword: String
 
-});
+})
 
-usersSchema.pre('save', function (next) {
+userSchema.pre('save', function (next) {
     if (this.isModified('password')) {
         bcrypt.hash(this.password, 10, (err, hash) => {
             if (err) return next(err);
@@ -21,7 +21,7 @@ usersSchema.pre('save', function (next) {
     }
 })
 
-usersSchema.pre('save', function (next) {
+userSchema.pre('save', function (next) {
     if (this.isModified('cpassword')) {
         bcrypt.hash(this.cpassword, 10, (err, hash) => {
             if (err) return next(err);
@@ -32,4 +32,4 @@ usersSchema.pre('save', function (next) {
     }
 })
 
-module.exports = mongoose.model('Users', usersSchema, 'Users');
+module.exports = mongoose.model('user', userSchema, 'users')

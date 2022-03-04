@@ -1,21 +1,44 @@
-<!DOCTYPE html>
-<html>
+<!--
+<div class="div row">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Register</h3>
+        </div>
+        <div class="card-body">
+          <form class="form">
+            <div class="form-group">
+              <label for="">Email</label>
+              <input [(ngModel)]="loginUserData.email" name="email" type="text" class="frm-contrl rounded-0" required>
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input [(ngModel)]="loginUserData.password" name="password" type="password" class="frm-contrl rounded-0" required>
+            </div>
+            <button (click)="loginUser()" type ="button" class="btn btn-success float-right">login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+  
+  <html>
 
 <body>
-
-    <form class="form" (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <form class="form">
         <div class="imgcontainer">
             <img src="../../../../assets/images/userimages/user.jpg" alt="Avatar" class="avatar" />
         </div>
 
         <div class="container">
             <label for="email"><b>Email</b></label>
-            <input [(ngModel)]="email" type="text" placeholder="Enter Email" name="email" required />
+            <input [(ngModel)]="loginUserData.email" name="email" type="text" placeholder="Enter Email" required />
 
             <label for="password"><b>Password</b></label>
-            <input [(ngModel)]="password" type="password" placeholder="Enter Password" name="password" required />
+            <input [(ngModel)]="loginUserData.password" name="password" type="password" placeholder="Enter Password" required />
 
-            <button type="submit">Login</button>
+            <button (click)="loginUser()" type="button">Login</button>
 
         </div>
 

@@ -21,8 +21,7 @@ import { AssetStatisticsComponent } from './components/statistics-dashobard/asse
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginService } from './login.service';
-import { RegisterService } from './register.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +51,7 @@ import { RegisterService } from './register.service';
     MatIconModule,
     HttpClientModule
   ],
-  providers: [LoginService, RegisterService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
