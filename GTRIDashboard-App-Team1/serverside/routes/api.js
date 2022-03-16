@@ -16,6 +16,22 @@ mongoose.connect(db, err => {
     }
 })
 
+function verifyToken(req, res, next){
+    if (!req.headers.authorization){
+        return res.status(401).send('Unauthorized request')
+    } 
+    let token = req.headers.authorization.split(' ')[1]
+    if (token === 'null'){
+        return res.status(401).send('Unauthorized request')
+    }
+    let payload = jwt.verify(token, 'secretKey')
+    if(!payload){
+        return res.status(401).send('Unauthorized request')
+    } 
+    req.userId = payload.subject
+    next()
+}
+
 router.get('/', (req, res) => {
     res.send('from API route')
 })
@@ -35,7 +51,7 @@ router.post('/register', (req, res) => {
 })
 
 
-router.post("/login", async (req, res) => {
+router.post('/login', async (req, res) => {
     const userData = req.body;
     const user = await User.findOne({ email: userData.email });
     if (user) {
@@ -52,5 +68,9 @@ router.post("/login", async (req, res) => {
         res.status(401).json({ error: "User does not exist" });
     }
 });
+
+router.get('/asset-statistics', verifyToken, (req, res) => {
+    
+})
 
 module.exports = router

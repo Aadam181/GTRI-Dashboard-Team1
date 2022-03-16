@@ -4,12 +4,13 @@ import { AssetStatisticsComponent } from './components/statistics-dashobard/asse
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TicketStatisticsComponent } from './components/statistics-dashobard/ticket-statistics/ticket-statistics.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch:'full'},
-  {path: 'asset-statistics', component:AssetStatisticsComponent},
-  {path: 'ticket-statistics', component:TicketStatisticsComponent},
+  {path: 'asset-statistics', component:AssetStatisticsComponent, canActivate:[AuthGuard]},
+  {path: 'ticket-statistics', component:TicketStatisticsComponent, canActivate:[AuthGuard]},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent}
 ];
