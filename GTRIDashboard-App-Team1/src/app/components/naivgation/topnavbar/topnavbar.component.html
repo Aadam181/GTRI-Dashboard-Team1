@@ -44,7 +44,7 @@
                         <mat-divider></mat-divider>
                         <button mat-menu-item>
                             
-                            <a routerLink="/logout"><mat-icon>exit_to_app</mat-icon>Logout</a>
+                            <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" ><mat-icon>exit_to_app</mat-icon>Logout</a>
                         </button>
                     </mat-menu>
                 </li>

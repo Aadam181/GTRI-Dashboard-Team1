@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output} from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-topnavbar',
@@ -8,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output} from 
 })
 export class TopnavbarComponent implements OnInit {
   @Output() toggleSidebarForMe: EventEmitter<any>=new EventEmitter();
-  constructor() { }
+  constructor(public _authService: AuthService) { }
 
   ngOnInit(): void {
   }
