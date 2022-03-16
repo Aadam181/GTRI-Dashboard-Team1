@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar *ngIf="_authService.loggedIn()">
     <mat-toolbar-row class="justify-content-between mt-2">
         <div style="display: flex;">
             <div>
@@ -52,3 +52,4 @@
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+

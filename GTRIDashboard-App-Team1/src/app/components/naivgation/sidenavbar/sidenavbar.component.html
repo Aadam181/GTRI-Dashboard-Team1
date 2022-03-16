@@ -31,7 +31,7 @@
       <img src="../../../assets/images/logo/KSULogo.png" alt="Company Logo">
   </div>
 </div>
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree" *ngIf="_authService.loggedIn()">
   <!-- This is the tree node template for leaf nodes -->
   <!-- There is inline padding applied to this node using styles.
     This padding value depends on the mat-icon-button width. -->

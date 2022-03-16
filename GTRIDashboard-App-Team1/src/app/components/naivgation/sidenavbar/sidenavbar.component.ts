@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { AuthService } from 'src/app/auth.service';
 
 interface NavigationNode {
   icon: string;
@@ -87,7 +88,7 @@ export class SidenavbarComponent  {
   treeControl = new NestedTreeControl<NavigationNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<NavigationNode>();
 
-  constructor() {
+  constructor(public _authService: AuthService) {
     this.dataSource.data = TREE_DATA;
   }
 
