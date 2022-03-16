@@ -20,8 +20,10 @@ import { TicketStatisticsComponent } from './components/statistics-dashobard/tic
 import { AssetStatisticsComponent } from './components/statistics-dashobard/asset-statistics/asset-statistics.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,12 @@ import { AuthService } from './auth.service';
     MatIconModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
