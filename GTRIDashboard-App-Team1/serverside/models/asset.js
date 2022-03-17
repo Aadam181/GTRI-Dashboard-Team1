@@ -3,14 +3,12 @@ const bcrypt = require('bcrypt')
 
 const Schema = mongoose.Schema
 const assetSchema = new Schema({
-    name: String,
-    email: String,
-    password: String,
-    cpassword: String
+    software: String,
+    version: String
 
 })
 
-userSchema.pre('save', function (next) {
+assetSchema.pre('save', function (next) {
     if (this.isModified('password')) {
         bcrypt.hash(this.password, 10, (err, hash) => {
             if (err) return next(err);
@@ -21,7 +19,7 @@ userSchema.pre('save', function (next) {
     }
 })
 
-userSchema.pre('save', function (next) {
+assetSchema.pre('save', function (next) {
     if (this.isModified('cpassword')) {
         bcrypt.hash(this.cpassword, 10, (err, hash) => {
             if (err) return next(err);
