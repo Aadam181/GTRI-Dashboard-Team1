@@ -12,14 +12,14 @@ interface NavigationNode {
 
 const TREE_DATA: NavigationNode[] = [
   {
-    icon: "dashboard", name: 'Dashboard', path: "",
+    icon: "dashboard", name: 'Dashboard', path: "ticket-statistics",
     children: [
       {icon: "", name: 'Devices', path: "devices'"},
       {icon: "", name: 'Software Catalog', path: ""},
       {icon: "", name: 'Accessories', path:""}],
   },
   {
-    icon: "desktop_windows", name: 'Asset Management', path: "",
+    icon: "desktop_windows", name: 'Asset Management', path: "asset-management",
     children: [
     {icon: "", name: 'Assets', path: "'"},
     {icon: "", name: 'Licenses', path: ""},

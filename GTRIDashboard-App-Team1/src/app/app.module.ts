@@ -24,6 +24,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { amComponent } from './components/asset management/am.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     TicketStatisticsComponent,
     AssetStatisticsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    amComponent
   ],
   imports: [
     BrowserModule,
