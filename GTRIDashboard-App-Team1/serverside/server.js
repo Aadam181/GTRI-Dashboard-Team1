@@ -2,9 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-const PORT = 3000
 const api = require('./routes/api')
-const app = express()
+const app = express();
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -15,6 +14,22 @@ app.get('/', function (req, res){
     res.send('hello')
 })
 
-app.listen(PORT, function(){
-    console.log('server running port ' + PORT)
-})
+
+function requireHTTPS(req, res, next) {
+    // The 'x-forwarded-proto' check is for Heroku
+    if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+        return res.redirect('https://' + req.get('host') + req.url);
+    }
+    next();
+}
+
+
+app.use(requireHTTPS);
+
+app.use(express.static('./dist/gtridashboard-app-team1'));
+
+app.get('/', function(req, res) {
+    res.sendFile('index.html', {root: 'dist/gtridashboard-app-team1/'});
+  });
+
+  app.listen(process.env.PORT || 8080);
